@@ -37,14 +37,10 @@ export default function RootLayout({
               {/* Main Content Area */}
             <main className="flex-1 flex flex-col w-full">
               <div className="flex-1">{children}</div>
-
-              {/* Persistent Bottom Navigator – Clean & Elevated */}
-              <div className="sticky bottom-0 z-40 w-full border-t border-border/60 bg-background/80 backdrop-blur-md shadow-lg">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
-                  <PageNavigator />
-                </div>
-              </div>
             </main>
+
+            {/* Floating Navigator */}
+            <PageNavigator />
 
             {/* Footer */}
             <Footer />

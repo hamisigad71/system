@@ -113,38 +113,52 @@ export function HomeConfigurator() {
       </nav>
 
       {/* HERO SECTION */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 text-white py-16 md:py-20 border-b border-slate-600">
-        {/* Subtle Background Elements */}
-        <div className="absolute inset-0 overflow-hidden opacity-40">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-slate-600 rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-blob"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-slate-700 rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
-        </div>
+      <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-800 text-white py-20 md:py-28 border-b border-blue-800/50">
+  {/* Enhanced Subtle Background Elements */}
+  <div className="absolute inset-0 overflow-hidden">
+    {/* Large soft blobs for depth */}
+    <div className="absolute top-0 -left-40 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+    <div className="absolute top-20 -right-40 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+    <div className="absolute -bottom-40 left-1/2 w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-4000"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-left">
-            {/* Animated Badge */}
-            <div className="flex justify-center mb-6">
-              <div className="inline-flex items-center gap-2 bg-slate-600/30 backdrop-blur-sm border border-slate-500/50 rounded-full px-4 py-2 text-sm font-semibold text-slate-200">
-                <span className="w-2 h-2 bg-slate-400 rounded-full animate-pulse"></span>
-                Design & Build Smarter
-              </div>
-            </div>
+    {/* Subtle wave overlay for tech feel */}
+    <div className="absolute inset-0 opacity-10">
+      <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-cyan-400/20 to-transparent"></div>
+    </div>
+  </div>
 
-            {/* Main Headline */}
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
-              Design Your Dream Home
-            </h2>
-
-            <p className="text-lg md:text-xl text-slate-200 max-w-3xl leading-relaxed mb-2">
-              Configure your preferences and get instant cost estimates, detailed layouts, and maintenance projections.
-            </p>
-
-            <p className="text-sm md:text-base text-slate-300 max-w-2xl opacity-90">
-              From budget planning to final floor plans - all in one powerful tool
-            </p>
-          </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="text-left">
+      {/* Premium Badge */}
+      <div className="flex justify-center mb-8">
+        <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 text-base font-semibold text-white shadow-lg">
+          <span className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></span>
+          Design & Build Smarter
         </div>
       </div>
+
+      {/* Main Headline */}
+      <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-cyan-200 drop-shadow-2xl">
+        Design Your Dream Home
+      </h2>
+
+      <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-4 opacity-95">
+        Configure your preferences and get instant cost estimates, detailed layouts, and maintenance projections.
+      </p>
+
+      <p className="text-base md:text-lg text-blue-200 max-w-3xl mx-auto opacity-90">
+        From budget planning to final floor plans — all in one powerful, intelligent tool.
+      </p>
+    </div>
+  </div>
+
+  {/* Optional subtle bottom wave */}
+  <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+    <svg className="relative block w-full h-20" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path fill="currentColor" fillOpacity="0.08" d="M0,0 C360,60 1080,60 1440,0 L1440,120 L0,120 Z"></path>
+    </svg>
+  </div>
+</div>
 
       {/* MAIN CONTENT */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -152,10 +166,13 @@ export function HomeConfigurator() {
           {/* LEFT PANEL */}
           <div className="lg:col-span-5 space-y-6">
             {/* Location & Budget */}
-            <Card className="border-0 shadow-sm hover:shadow-md transition-all duration-300 bg-white border border-slate-200">
-              <CardHeader className="bg-slate-100 text-slate-900 rounded-t-lg border-b border-slate-200">
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <MapPin className="w-5 h-5" />
+            <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white overflow-hidden group">
+              <CardHeader className="bg-blue-100 text-slate-800 rounded-t-lg border-b-0 py-8 relative overflow-hidden">
+                <div className="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <CardTitle className="text-xl flex items-center gap-3 pt-2 relative z-10 font-bold">
+                  <div className="w-10 h-10 rounded-lg bg-blue-300/40 flex items-center justify-center backdrop-blur-sm">
+                    <MapPin className="w-6 h-6 text-blue-700" />
+                  </div>
                   Location & Budget
                 </CardTitle>
               </CardHeader>
@@ -198,10 +215,13 @@ export function HomeConfigurator() {
             </Card>
 
             {/* Style & Design */}
-            <Card className="border-0 shadow-sm hover:shadow-md transition-all duration-300 bg-white border border-slate-200">
-              <CardHeader className="bg-slate-100 text-slate-900 rounded-t-lg border-b border-slate-200">
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Lightbulb className="w-5 h-5" />
+            <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white overflow-hidden group">
+              <CardHeader className="bg-emerald-100 text-slate-800 rounded-t-lg border-b-0 py-8 relative overflow-hidden">
+                <div className="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <CardTitle className="text-xl flex items-center gap-3 pt-2 relative z-10 font-bold">
+                  <div className="w-10 h-10 rounded-lg bg-green-300/40 flex items-center justify-center backdrop-blur-sm">
+                    <Lightbulb className="w-6 h-6 text-green-700" />
+                  </div>
                   Style & Design
                 </CardTitle>
               </CardHeader>
@@ -259,10 +279,13 @@ export function HomeConfigurator() {
             </Card>
 
             {/* Features */}
-            <Card className="border-0 shadow-sm hover:shadow-md transition-all duration-300 bg-white border border-slate-200">
-              <CardHeader className="bg-slate-100 text-slate-900 rounded-t-lg border-b border-slate-200">
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Zap className="w-5 h-5" />
+            <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white overflow-hidden group">
+              <CardHeader className="bg-orange-100 text-slate-800 rounded-t-lg border-b-0 py-8 relative overflow-hidden">
+                <div className="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <CardTitle className="text-xl flex items-center gap-3 pt-2 relative z-10 font-bold">
+                  <div className="w-10 h-10 rounded-lg bg-orange-300/40 flex items-center justify-center backdrop-blur-sm">
+                    <Zap className="w-6 h-6 text-orange-700" />
+                  </div>
                   Premium Features
                 </CardTitle>
               </CardHeader>
@@ -291,7 +314,7 @@ export function HomeConfigurator() {
             </Card>
 
             {/* Buttons */}
-            <div className="flex gap-3 sticky bottom-4">
+            <div className="flex gap-3   bottom-4">
               <Button onClick={handleCalculate} className="flex-1 bg-slate-700 hover:bg-slate-800 text-white py-6 text-lg font-bold shadow-md transition-all duration-300">
                 <Building2 className="w-5 h-5 mr-2" />
                 Calculate & Design

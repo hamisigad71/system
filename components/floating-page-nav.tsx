@@ -64,9 +64,6 @@ export function FloatingPageNav({
       }`}
     >
       <div className="relative">
-        {/* Animated background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
         {/* Main container */}
         <div className="relative flex items-center gap-1 bg-gradient-to-br from-white/95 to-slate-50/95 backdrop-blur-xl rounded-full shadow-2xl border border-white/50 px-2 py-2 ring-1 ring-white/20">
           {/* Previous Button */}
@@ -170,7 +167,7 @@ export function FloatingPageNav({
 
           {/* Status indicator dots */}
           {currentPage !== undefined && totalPages !== undefined && (
-            <div className="ml-2 pl-2 border-l border-slate-200/50 flex gap-1.5">
+            <div className="ml-2 pl-2 border-l  flex gap-1.5">
               {Array.from({ length: Math.min(totalPages, 5) }).map((_, i) => (
                 <div
                   key={i}
@@ -184,10 +181,6 @@ export function FloatingPageNav({
             </div>
           )}
         </div>
-
-        {/* Floating orbs decoration */}
-        <div className="absolute -top-2 -left-4 w-8 h-8 bg-blue-400/20 rounded-full blur-md"></div>
-        <div className="absolute -bottom-2 -right-4 w-8 h-8 bg-purple-400/20 rounded-full blur-md"></div>
       </div>
 
       {/* Keyboard shortcut hint */}

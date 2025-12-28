@@ -207,89 +207,86 @@ export function ProjectsDashboard() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card className="border-0 shadow-md bg-linear-to-br from-blue-900 to-blue-800 text-white overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
-            <CardHeader className="flex flex-row items-center justify-between pb-2 relative z-10">
-              <CardTitle className="text-sm font-medium text-blue-100">
-                Total Projects
-              </CardTitle>
-              <FolderOpen className="h-5 w-5 text-blue-200" />
-            </CardHeader>
-            <CardContent className="relative z-10">
-              <div className="text-4xl font-bold">{projects.length}</div>
-              <p className="text-xs text-blue-200 mt-2">
-                Active housing projects
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-slate-600">
-                Housing Units
-              </CardTitle>
-              <Building className="h-5 w-5 text-emerald-600" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-4xl font-bold text-slate-900">
-                {stats.totalUnits.toLocaleString()}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+          {/* Total Projects Card */}
+          <div className="group relative overflow-hidden rounded-xl bg-blue-50/40 border border-blue-100 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-blue-600" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-transparent" />
+            <div className="absolute top-0 right-0 w-20 h-20 bg-blue-100/30 rounded-full -mr-10 -mt-10 blur-2xl" />
+            
+            <div className="relative z-10 p-5 flex flex-col h-full">
+              <p className="text-slate-600 text-xs font-semibold tracking-wide uppercase mb-8">Total Projects</p>
+              <div className="flex-1 flex flex-col justify-end">
+                <div className="text-5xl font-bold text-blue-900 mb-2">{projects.length}</div>
+                <p className="text-slate-600 text-sm">Active housing projects</p>
               </div>
-              <div className="flex items-center gap-2 mt-2">
-                <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-linear-to-r from-emerald-500 to-emerald-600 rounded-full transition-all duration-500"
-                    style={{
-                      width: `${Math.min(
-                        (stats.totalUnits / 10000) * 100,
-                        100
-                      )}%`,
-                    }}
-                  />
+            </div>
+          </div>
+
+          {/* Housing Units Card */}
+          <div className="group relative overflow-hidden rounded-xl bg-slate-50/40 border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-slate-400 to-slate-600" />
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-transparent to-transparent" />
+            <div className="absolute top-0 right-0 w-20 h-20 bg-slate-100/30 rounded-full -mr-10 -mt-10 blur-2xl" />
+            
+            <div className="relative z-10 p-5 flex flex-col h-full">
+              <p className="text-slate-600 text-xs font-semibold tracking-wide uppercase mb-8">Housing Units</p>
+              <div className="flex-1 flex flex-col justify-end">
+                <div className="text-5xl font-bold text-slate-900 mb-4">{stats.totalUnits.toLocaleString()}</div>
+                <div className="space-y-2">
+                  <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full transition-all duration-500"
+                      style={{
+                        width: `${Math.min(
+                          (stats.totalUnits / 10000) * 100,
+                          100
+                        )}%`,
+                      }}
+                    />
+                  </div>
+                  <p className="text-slate-600 text-xs font-medium">{stats.avgUnitsPerProject} per project</p>
                 </div>
-                <span className="text-xs text-slate-500">
-                  {stats.avgUnitsPerProject}/project
-                </span>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
-          <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-slate-600">
-                People Housed
-              </CardTitle>
-              <Users className="h-5 w-5 text-violet-600" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-4xl font-bold text-slate-900">
-                {stats.totalPeopleHoused.toLocaleString()}
+          {/* People Housed Card */}
+          <div className="group relative overflow-hidden rounded-xl bg-blue-50/40 border border-blue-100 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-blue-600" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-transparent" />
+            <div className="absolute top-0 right-0 w-20 h-20 bg-blue-100/30 rounded-full -mr-10 -mt-10 blur-2xl" />
+            
+            <div className="relative z-10 p-5 flex flex-col h-full">
+              <p className="text-slate-600 text-xs font-semibold tracking-wide uppercase mb-8">People Housed</p>
+              <div className="flex-1 flex flex-col justify-end">
+                <div className="text-5xl font-bold text-blue-900 mb-4">{stats.totalPeopleHoused.toLocaleString()}</div>
+                <div className="inline-flex items-center gap-2 bg-blue-100/40 px-3 py-2 rounded-lg w-fit">
+                  <TrendingUp className="h-4 w-4 text-blue-700" />
+                  <span className="text-blue-700 text-xs font-semibold">Impact potential</span>
+                </div>
               </div>
-              <div className="flex items-center gap-1 mt-2 text-xs text-violet-600">
-                <TrendingUp className="h-3 w-3" />
-                <span>Social impact potential</span>
-              </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
-          <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-slate-600">
-                Total Investment
-              </CardTitle>
-              <DollarSign className="h-5 w-5 text-amber-600" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-4xl font-bold text-slate-900">
-                {stats.totalBudget > 0
-                  ? `$${(stats.totalBudget / 1000000).toFixed(1)}M`
-                  : "$0"}
+          {/* Total Investment Card */}
+          <div className="group relative overflow-hidden rounded-xl bg-slate-50/40 border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-slate-400 to-slate-600" />
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-transparent to-transparent" />
+            <div className="absolute top-0 right-0 w-20 h-20 bg-slate-100/30 rounded-full -mr-10 -mt-10 blur-2xl" />
+            
+            <div className="relative z-10 p-5 flex flex-col h-full">
+              <p className="text-slate-600 text-xs font-semibold tracking-wide uppercase mb-8">Total Investment</p>
+              <div className="flex-1 flex flex-col justify-end">
+                <div className="text-5xl font-bold text-slate-900 mb-4">
+                  {stats.totalBudget > 0
+                    ? `$${(stats.totalBudget / 1000000).toFixed(1)}M`
+                    : "$0"}
+                </div>
+                <p className="text-slate-600 text-xs font-medium">{stats.scenarioCount} scenarios analyzed</p>
               </div>
-              <p className="text-xs text-slate-500 mt-2">
-                {stats.scenarioCount} scenarios analyzed
-              </p>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -355,38 +352,41 @@ export function ProjectsDashboard() {
           </div>
 
          <div className="space-y-6">
-  {/* Recent Activity – Enhanced with modern timeline style */}
-  <Card className="border-0 shadow-lg overflow-hidden bg-white/80 backdrop-blur-sm">
-    <CardHeader className="bg-gradient-to-r from-blue-900 to-blue-800 text-white pb-6">
-      <div className="flex items-center gap-3 pt-4">
-        <div className="p-2 bg-white/20 rounded-lg">
-          <Calendar className="h-6 w-6" />
+  {/* Recent Activity – Enhanced with modern timeline style, fully responsive */}
+  <Card className="border-0 shadow-lg overflow-hidden bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-100">
+    <CardHeader className="relative bg-blue-900 text-white overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute bottom-0 left-0 w-full h-20 bg-white/10 rounded-t-full blur-3xl" />
+      </div>
+      <div className="relative flex items-center gap-2 sm:gap-3 py-4 sm:py-6">
+        <div className="p-2 sm:p-3 bg-white/20 rounded-lg sm:rounded-xl shrink-0">
+          <Calendar className="h-5 w-5 sm:h-6 sm:w-6" />
         </div>
-        <CardTitle className="text-xl font-semibold">Recent Activity</CardTitle>
+        <CardTitle className="text-lg sm:text-xl font-semibold">Recent Activity</CardTitle>
       </div>
     </CardHeader>
-    <CardContent className="pt-6">
+    <CardContent className="pt-4 sm:pt-6 pb-4 sm:pb-6 px-3 sm:px-6">
       {recentProjects.length > 0 ? (
         <div className="relative">
           {/* Vertical timeline line */}
-          <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-blue-200" />
-          <div className="space-y-5">
+          <div className="absolute left-4 sm:left-5 top-0 bottom-0 w-0.5 bg-blue-200" />
+          <div className="space-y-3 sm:space-y-5">
             {recentProjects.map((project, index) => (
-              <div key={project.id} className="relative flex gap-4">
+              <div key={project.id} className="relative flex gap-3 sm:gap-4">
                 {/* Timeline dot */}
-                <div className="shrink-0 w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center shadow-md z-10 ring-4 ring-white">
-                  <div className="w-3 h-3 rounded-full bg-white" />
+                <div className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-900 flex items-center justify-center shadow-md z-10 ring-4 ring-white">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-white" />
                 </div>
                 {/* Content */}
-                <div className="flex-1 bg-slate-50 rounded-xl p-4 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 border border-slate-100">
-                  <p className="font-semibold text-slate-900 truncate">
+                <div className="flex-1 bg-white/60 rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 border border-slate-100">
+                  <p className="font-semibold text-slate-900 truncate text-sm sm:text-base">
                     {project.name}
                   </p>
-                  <div className="flex items-center gap-1.5 mt-1 text-sm text-slate-600">
-                    <MapPin className="h-4 w-4 text-blue-700" />
-                    <span>{project.location.city}</span>
+                  <div className="flex items-center gap-1.5 mt-1 text-xs sm:text-sm text-slate-600">
+                    <MapPin className="h-3 w-3 sm:h-4 sm:w-4 text-blue-700 shrink-0" />
+                    <span className="truncate">{project.location.city}</span>
                   </div>
-                  <div className="mt-2 text-xs text-slate-500 bg-white/60 inline-block px-3 py-1 rounded-full">
+                  <div className="mt-2 text-xs text-slate-500 bg-white/80 inline-block px-2 sm:px-3 py-1 rounded-full whitespace-nowrap">
                     {new Date(project.updatedAt).toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",
@@ -404,71 +404,98 @@ export function ProjectsDashboard() {
           </div>
         </div>
       ) : (
-        <div className="text-center py-12">
-          <div className="inline-flex p-4 bg-slate-100 rounded-full mb-4">
-            <Calendar className="h-10 w-10 text-slate-400" />
+        <div className="text-center py-8 sm:py-12">
+          <div className="inline-flex p-3 sm:p-4 bg-blue-100 rounded-full mb-3 sm:mb-4">
+            <Calendar className="h-8 w-8 sm:h-10 sm:w-10 text-blue-700" />
           </div>
-          <p className="text-slate-500 font-medium">No recent activity yet</p>
-          <p className="text-sm text-slate-400 mt-2">Your project updates will appear here</p>
+          <p className="text-slate-600 font-medium text-sm sm:text-base">No recent activity yet</p>
+          <p className="text-xs sm:text-sm text-slate-500 mt-1 sm:mt-2">Your project updates will appear here</p>
         </div>
       )}
     </CardContent>
   </Card>
 
-  {/* Quick Tips – Creative pill-style cards with icons */}
-  <Card className="border-0 shadow-xl overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-    {/* Enhanced Header with subtle wave background */}
-    <CardHeader className="relative bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 text-white overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        {/* Optional: add a subtle SVG wave or pattern here for extra flair */}
+  {/* Quick Tips – Fully responsive with blue theme */}
+  <Card className="border-0 shadow-xl overflow-hidden bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-100">
+    {/* Enhanced Header */}
+    <CardHeader className="relative bg-blue-900 text-white overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
         <div className="absolute bottom-0 left-0 w-full h-20 bg-white/10 rounded-t-full blur-3xl" />
       </div>
-      <div className="relative flex items-center justify-between py-6">
-        <div className="flex items-center gap-4">
-          <div className="p-3 bg-white/25 backdrop-blur-sm rounded-2xl shadow-lg">
-            <Lightbulb className="h-8 w-8" />
+      <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 py-4 sm:py-6">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <div className="p-2 sm:p-3 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-lg shrink-0">
+            <Lightbulb className="h-6 w-6 sm:h-8 sm:w-8" />
           </div>
           <div>
-            <CardTitle className="text-2xl font-bold">Quick Tips</CardTitle>
-            <p className="text-sm text-white/80 mt-1">Boost your planning efficiency</p>
+            <CardTitle className="text-xl sm:text-2xl font-bold">Quick Tips</CardTitle>
+            <p className="text-xs sm:text-sm text-white/80 mt-1">Boost your planning efficiency</p>
           </div>
         </div>
         {/* Decorative floating sparkles */}
-        <div className="hidden md:block">
+        <div className="hidden sm:block">
           <div className="flex gap-2">
             <div className="w-2 h-2 bg-white/40 rounded-full animate-pulse" />
-            <div className="w-3 h-3 bg-white/60 rounded-full animate-pulse delay-75" />
-            <div className="w-2 h-2 bg-white/40 rounded-full animate-pulse delay-150" />
+            <div className="w-3 h-3 bg-white/60 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+            <div className="w-2 h-2 bg-white/40 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
           </div>
         </div>
       </div>
     </CardHeader>
 
-    <CardContent className="pt-10 pb-12 px-6 md:px-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <CardContent className="pt-6 sm:pt-10 pb-8 sm:pb-12 px-4 sm:px-6 md:px-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {/* Tip 1 */}
-        <div className="group relative bg-white/80 backdrop-blur-md rounded-3xl p-7 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-white/60 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-300/20 via-transparent to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="group relative bg-white/80 backdrop-blur-md rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 sm:hover:-translate-y-3 border border-white/60 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-300/20 via-transparent to-transparent rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <div className="relative z-10 flex flex-col h-full">
-            <div className="p-4 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl w-fit mb-5 group-hover:scale-110 transition-transform duration-300">
-              <Layout className="h-8 w-8 text-blue-800" />
+            <div className="p-3 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl sm:rounded-2xl w-fit mb-4 sm:mb-5 group-hover:scale-110 transition-transform duration-300 shrink-0">
+              <Layout className="h-6 w-6 sm:h-8 sm:w-8 text-blue-800" />
             </div>
-            <p className="text-lg font-medium text-slate-800 leading-relaxed">
+            <p className="text-base sm:text-lg font-medium text-slate-800 leading-relaxed flex-1">
               Create multiple scenarios to compare different layout approaches
             </p>
-            <div className="mt-6 flex items-center text-sm text-blue-600 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="mt-4 sm:mt-6 flex items-center text-xs sm:text-sm text-blue-600 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
               Explore scenarios →
             </div>
           </div>
         </div>
 
-        {/* Tip 2 and Tip 3 — same structure */}
-        {/* ... (keep your existing Tip 2 and 3) ... */}
+        {/* Tip 2 */}
+        <div className="group relative bg-white/80 backdrop-blur-md rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 sm:hover:-translate-y-3 border border-white/60 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-300/20 via-transparent to-transparent rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="relative z-10 flex flex-col h-full">
+            <div className="p-3 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl sm:rounded-2xl w-fit mb-4 sm:mb-5 group-hover:scale-110 transition-transform duration-300 shrink-0">
+              <DollarSign className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-800" />
+            </div>
+            <p className="text-base sm:text-lg font-medium text-slate-800 leading-relaxed flex-1">
+              Use cost breakdown tools to track budget allocation efficiently
+            </p>
+            <div className="mt-4 sm:mt-6 flex items-center text-xs sm:text-sm text-cyan-600 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+              Review budgets →
+            </div>
+          </div>
+        </div>
 
+        {/* Tip 3 */}
+        <div className="group relative bg-white/80 backdrop-blur-md rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 sm:hover:-translate-y-3 border border-white/60 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-300/20 via-transparent to-transparent rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="relative z-10 flex flex-col h-full">
+            <div className="p-3 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl sm:rounded-2xl w-fit mb-4 sm:mb-5 group-hover:scale-110 transition-transform duration-300 shrink-0">
+              <Users className="h-6 w-6 sm:h-8 sm:w-8 text-blue-800" />
+            </div>
+            <p className="text-base sm:text-lg font-medium text-slate-800 leading-relaxed flex-1">
+              Analyze demographic data to optimize housing solutions for communities
+            </p>
+            <div className="mt-4 sm:mt-6 flex items-center text-xs sm:text-sm text-blue-600 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+              View analytics →
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="mt-10 text-center">
-        <p className="text-sm text-slate-500">More tips unlock as you create projects</p>
+      <div className="mt-6 sm:mt-10 text-center">
+        <p className="text-xs sm:text-sm text-slate-600">More tips unlock as you create projects</p>
       </div>
     </CardContent>
   </Card>
@@ -483,7 +510,14 @@ export function ProjectsDashboard() {
       />
 
       {/* UserProfile Modal */}
-      {showProfile && <UserProfile onClose={() => setShowProfile(false)} />}
+      {showProfile && (
+        <UserProfile 
+          onClose={() => setShowProfile(false)}
+          projectCount={projects.length}
+          completedCount={0}
+          inProgressCount={projects.length}
+        />
+      )}
     </main>
     </div>
   );
