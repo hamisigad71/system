@@ -151,7 +151,7 @@ export default function ProjectPage({
 
               <div className="min-w-0">
                <h1 className="text-lg sm:text-xl font-semibold text-slate-900 truncate">
-  Design {project?.name}
+  Project Control Center
 </h1>
 <p className="text-xs sm:text-sm text-slate-500 truncate">
   Smart Planning Hub

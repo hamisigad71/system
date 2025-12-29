@@ -62,15 +62,15 @@ export function ProjectHeader({ project, scenarios = [] }: ProjectHeaderProps) {
 
           {/* Main Stats Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-            {/* Land Size */}
-            <div className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all duration-300">
-              <div className="h-2 bg-gradient-to-r from-slate-400 to-slate-500"></div>
+            {/* Land Size - Blue */}
+            <div className="group bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-100 overflow-hidden hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+              <div className="h-3 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600"></div>
               <div className="p-4 md:p-5">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
-                    <Maximize2 className="h-5 w-5 text-slate-600" />
+                  <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                    <Maximize2 className="h-5 w-5 text-blue-600" />
                   </div>
-                  <span className="text-xs font-bold text-slate-600 uppercase tracking-wide">Land</span>
+                  <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Land</span>
                 </div>
                 <div className="space-y-1">
                   <p className="text-xs md:text-sm text-slate-500 font-medium">Size</p>
@@ -79,15 +79,15 @@ export function ProjectHeader({ project, scenarios = [] }: ProjectHeaderProps) {
               </div>
             </div>
 
-            {/* Project Type */}
-            <div className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all duration-300">
-              <div className="h-2 bg-gradient-to-r from-slate-400 to-slate-500"></div>
+            {/* Project Type - Light Green */}
+            <div className="group bg-gradient-to-br from-emerald-50 to-white rounded-xl border border-emerald-100 overflow-hidden hover:shadow-xl hover:border-emerald-300 transition-all duration-300">
+              <div className="h-3 bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-600"></div>
               <div className="p-4 md:p-5">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
-                    <Home className="h-5 w-5 text-slate-600" />
+                  <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
+                    <Home className="h-5 w-5 text-emerald-600" />
                   </div>
-                  <span className="text-xs font-bold text-slate-600 uppercase tracking-wide">Type</span>
+                  <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider">Type</span>
                 </div>
                 <div className="space-y-1">
                   <p className="text-xs md:text-sm text-slate-500 font-medium">Project</p>
@@ -96,15 +96,15 @@ export function ProjectHeader({ project, scenarios = [] }: ProjectHeaderProps) {
               </div>
             </div>
 
-            {/* Target Income */}
-            <div className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all duration-300">
-              <div className="h-2 bg-gradient-to-r from-slate-400 to-slate-500"></div>
+            {/* Target Income - Purple */}
+            <div className="group bg-gradient-to-br from-purple-50 to-white rounded-xl border border-purple-100 overflow-hidden hover:shadow-xl hover:border-purple-300 transition-all duration-300">
+              <div className="h-3 bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600"></div>
               <div className="p-4 md:p-5">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
-                    <Users className="h-5 w-5 text-slate-600" />
+                  <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                    <Users className="h-5 w-5 text-purple-600" />
                   </div>
-                  <span className="text-xs font-bold text-slate-600 uppercase tracking-wide">Target</span>
+                  <span className="text-xs font-bold text-purple-600 uppercase tracking-wider">Target</span>
                 </div>
                 <div className="space-y-1">
                   <p className="text-xs md:text-sm text-slate-500 font-medium">Income</p>
@@ -113,15 +113,15 @@ export function ProjectHeader({ project, scenarios = [] }: ProjectHeaderProps) {
               </div>
             </div>
 
-            {/* Budget Range */}
-            <div className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all duration-300">
-              <div className="h-2 bg-gradient-to-r from-slate-500 to-slate-600"></div>
+            {/* Budget Range - Orange */}
+            <div className="group bg-gradient-to-br from-orange-50 to-white rounded-xl border border-orange-100 overflow-hidden hover:shadow-xl hover:border-orange-300 transition-all duration-300">
+              <div className="h-3 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600"></div>
               <div className="p-4 md:p-5">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-slate-200 flex items-center justify-center group-hover:bg-slate-300 transition-colors">
-                    <DollarSign className="h-5 w-5 text-slate-700" />
+                  <div className="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                    <DollarSign className="h-5 w-5 text-orange-600" />
                   </div>
-                  <span className="text-xs font-bold text-slate-700 uppercase tracking-wide">Budget</span>
+                  <span className="text-xs font-bold text-orange-600 uppercase tracking-wider">Budget</span>
                 </div>
                 <div className="space-y-1">
                   <p className="text-xs md:text-sm text-slate-500 font-medium">Range</p>

@@ -253,11 +253,28 @@ export function calculateHomeSpecification(config: HomeBuilderConfig): HomeSpeci
   const laborCostPercentage = countryData.laborCostPercentage / 100
   const laborCost = Math.round(buildingCost * laborCostPercentage)
   
-  const infrastructureCost = 
+  // Scale infrastructure cost based on building size, features, and land size
+  const baseInfrastructureCost = 
     countryData.infrastructure.waterPerConnection +
     countryData.infrastructure.sewerPerConnection +
-    (countryData.infrastructure.roadsPerMeter * 50) +
-    5000
+    (countryData.infrastructure.roadsPerMeter * Math.min(config.landSize / 100, 200))
+  
+  // Add feature-based infrastructure upgrades
+  let featureInfrastructureCost = 0
+  if (config.features.solarPanels) featureInfrastructureCost += 3000 // Electrical grid upgrades
+  if (config.features.smartHome) featureInfrastructureCost += 2000  // Data/network infrastructure
+  if (config.features.airConditioning) featureInfrastructureCost += 2500 // Electrical capacity
+  if (config.features.swimmingPool) featureInfrastructureCost += 5000 // Water treatment, drainage
+  if (config.features.garage) featureInfrastructureCost += 1500 // Additional paving/utilities
+  if (config.features.garden) featureInfrastructureCost += 1000 // Irrigation/drainage systems
+  
+  // Scale with building area and complexity (luxury costs more for infrastructure)
+  const areaScaleFactor = totalBuildingArea / 100 // Base is 100m²
+  const styleInfrastructureMultiplier = STYLE_MULTIPLIERS[config.style] || 1.0
+  
+  const infrastructureCost = Math.round(
+    (baseInfrastructureCost + featureInfrastructureCost) * areaScaleFactor * (styleInfrastructureMultiplier * 0.5 + 0.5)
+  )
   
   const enabledFeatures = Object.entries(config.features)
     .filter(([_, enabled]) => enabled)

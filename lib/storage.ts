@@ -210,12 +210,12 @@ function getDefaultAssumptions(countryCode: string): any {
       high: 300,
       veryHigh: 500,
     },
-    // Infrastructure warning levels
+    // Infrastructure warning levels - adjusted for realistic capacity thresholds
     infrastructureWarningLevels: {
-      waterDemandExceeds: 500,    // m³ per day
-      waterDemandWarning: 300,    // m³ per day
-      populationExceeds: 2000,     // population
-      populationWarning: 1500,     // population
+      waterDemandExceeds: 5000,    // m³ per day (large projects only)
+      waterDemandWarning: 3000,    // m³ per day (medium-large projects)
+      populationExceeds: 15000,     // population (major development)
+      populationWarning: 8000,     // population (significant development)
     },
     // Standard room sizes (m²)
     roomSizes: {

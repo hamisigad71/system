@@ -21,6 +21,27 @@ export const metadata: Metadata = {
   },
 };
 
+function LayoutContent({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <>
+      {/* Main Content Area */}
+      <main className="flex-1 flex flex-col w-full">
+        <div className="flex-1">{children}</div>
+      </main>
+
+      {/* Floating Navigator */}
+      <PageNavigator />
+
+      {/* Footer */}
+      <Footer />
+    </>
+  );
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{

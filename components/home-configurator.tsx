@@ -216,11 +216,11 @@ export function HomeConfigurator() {
 
             {/* Style & Design */}
             <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white overflow-hidden group">
-              <CardHeader className="bg-emerald-100 text-slate-800 rounded-t-lg border-b-0 py-8 relative overflow-hidden">
+              <CardHeader className="bg-blue-100 text-slate-800 rounded-t-lg border-b-0 py-8 relative overflow-hidden">
                 <div className="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <CardTitle className="text-xl flex items-center gap-3 pt-2 relative z-10 font-bold">
-                  <div className="w-10 h-10 rounded-lg bg-green-300/40 flex items-center justify-center backdrop-blur-sm">
-                    <Lightbulb className="w-6 h-6 text-green-700" />
+                  <div className="w-10 h-10 rounded-lg bg-blue-300/40 flex items-center justify-center backdrop-blur-sm">
+                    <Lightbulb className="w-6 h-6 text-blue-700" />
                   </div>
                   Style & Design
                 </CardTitle>
